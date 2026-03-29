@@ -1,18 +1,20 @@
 # 🛠️ XYZ Code Merger
 
-Công cụ web siêu nhẹ giúp gộp nhiều file code hoặc tài liệu thành một file `.txt` duy nhất. Đây là giải pháp hoàn hảo và nhanh chóng nhất để vượt qua giới hạn upload 10 file của các AI Chatbot (như Gemini, ChatGPT, Claude) khi bạn muốn cung cấp toàn bộ thư mục dự án cho AI phân tích.
+A lightweight web utility designed to consolidate multiple source code files or documents into a single .txt file. This is the fastest and most efficient solution to bypass the 10-file upload limit on AI chatbots (such as Gemini, ChatGPT, Claude) when you need to provide an entire project directory for analysis.
 
 ![Giao diện XYZ Code Merger](assets/img/image.png)
 
-## 💻 Công nghệ & Kiến trúc
+## 💻 Tech
 
 - **Vue.js 3 (CDN)**
 - **Vanilla HTML/CSS/JS**
 
-## 🚀 Cách sử dụng
+## 🚀 How to Use
 
-Không cần cài đặt bất kỳ môi trường nào!
+### No environment setup required!
 
-1. Mở trực tiếp file `index.html` bằng trình duyệt web.
-2. Click để chọn (hoặc kéo thả) các file cần gộp.
-3. Bấm **CREATE**, đặt tên file xuất ra và mang file `.txt` đó thả vào AI.
+1. Open the index.html file directly in your web browser.
+
+2. Click to select (or drag and drop) the files you want to merge.
+
+3. Click CREATE, enter your desired output filename, and upload the generated .txt file to your AI assistant.
