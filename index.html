@@ -22,6 +22,11 @@
         />
       </div>
 
+      <div class="list-header" v-if="files.length > 0">
+        <span>📦 {{ files.length }} files (Total: {{ totalSize }})</span>
+        <span class="clear-all-btn" @click="clearAll">🗑️ Clear All</span>
+      </div>
+
       <div class="file-list" v-if="files.length > 0">
         <file-item
           v-for="(file, index) in files"
@@ -33,7 +38,7 @@
       </div>
 
       <app-button :disabled="files.length === 0" @click="showModal = true">
-        🚀 CREATE (Merge {{ files.length }} files)
+        🚀 CREATE MERGE (Merge {{ files.length }} files)
       </app-button>
 
       <app-modal

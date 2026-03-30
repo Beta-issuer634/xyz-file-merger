@@ -1,4 +1,13 @@
-const { createApp, ref } = Vue;
+const { createApp, ref, computed } = Vue;
+
+// Function to format file size (Bytes -> KB/MB)
+const formatBytes = (bytes) => {
+  if (bytes === 0) return "0 B";
+  const k = 1024;
+  const sizes = ["B", "KB", "MB", "GB"];
+  const i = Math.floor(Math.log(bytes) / Math.log(k));
+  return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + " " + sizes[i];
+};
 
 // Atom: Base button
 const AppButton = {
@@ -11,16 +20,24 @@ const AppButton = {
   emits: ["click"],
 };
 
-// Molecule: File item with remove button
+// Molecule: File item with size and remove button
 const FileItem = {
   template: `
         <div class="file-item">
-            <span>{{ file.name }}</span>
-            <span class="remove-btn" @click="$emit('remove')">✖</span>
+            <div class="file-info">
+                <span class="file-name">{{ file.name }}</span>
+                <span class="file-size">{{ formattedSize }}</span>
+            </div>
+            <span class="remove-btn" @click="$emit('remove')" title="Remove file">✖</span>
         </div>
     `,
   props: ["file"],
   emits: ["remove"],
+  computed: {
+    formattedSize() {
+      return formatBytes(this.file.size);
+    },
+  },
 };
 
 // Organism: Naming modal
@@ -53,10 +70,21 @@ const app = createApp({
     const handleFileUpload = (event) => {
       const selectedFiles = Array.from(event.target.files);
       files.value = [...files.value, ...selectedFiles];
-      event.target.value = ""; // Reset input for re-uploading same files
+      event.target.value = "";
     };
 
     const removeFile = (index) => files.value.splice(index, 1);
+
+    // Delete all files at once
+    const clearAll = () => {
+      files.value = [];
+    };
+
+    // Total capacity
+    const totalSize = computed(() => {
+      const totalBytes = files.value.reduce((acc, file) => acc + file.size, 0);
+      return formatBytes(totalBytes);
+    });
 
     const generateAndDownload = async () => {
       if (!outputFileName.value.trim()) {
@@ -65,14 +93,11 @@ const app = createApp({
       }
 
       let finalContent = "";
-
       for (const file of files.value) {
         const text = await file.text();
-        // Append with separators
         finalContent += `--- Start of file: ${file.name} ---\n${text}\n--- End of file: ${file.name} ---\n\n`;
       }
 
-      // Create and download file
       const blob = new Blob([finalContent], {
         type: "text/plain;charset=utf-8",
       });
@@ -93,6 +118,8 @@ const app = createApp({
       triggerFileInput,
       handleFileUpload,
       removeFile,
+      clearAll,
+      totalSize,
       generateAndDownload,
     };
   },
